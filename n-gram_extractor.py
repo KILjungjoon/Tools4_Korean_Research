@@ -45,16 +45,21 @@ class GramTools:
                 json.dump(content, f, indent=indent, ensure_ascii=False)
 
 if __name__=='__main__':
-    with open('D:/GitHub/Tools4_Korean_Research/president_moon.txt', 'r', encoding='utf-8') as f:
+    with open('D:/경사대 선생님들/장미/전주_total.txt', 'r', encoding='utf-8') as f:
     # with open(source file path', 'r', encoding='utf-8') as f:
         text = f.read()
-    g = GramTools(text, '|')    # You can designate any seperator. 'all' removes all symbols in the n-gram text.
+    g = GramTools(text, 'all')     # You can designate any seperator. 'all' removes all symbols in the n-gram text.
+    # g = GramTools(text, '?')
     uni_gram = g.get_n_gram_freq(1)
     bi_gram  = g.get_n_gram_freq(2)
     tri_gram = g.get_n_gram_freq(3)
     four_gram = g.get_n_gram_freq(4)
-
-    g.save('D:/GitHub/Tools4_Korean_Research/moon_1gram.txt', uni_gram)
-    g.save('D:/GitHub/Tools4_Korean_Research/moon_2gram.txt', bi_gram)
-    g.save('D:/GitHub/Tools4_Korean_Research/moon_3gram.txt', tri_gram)
-    g.save('D:/GitHub/Tools4_Korean_Research/moon_4gram.txt', four_gram)
+    five_gram = g.get_n_gram_freq(5)
+    six_gram = g.get_n_gram_freq(6)
+    
+    g.save('D:/경사대 선생님들/장미/전주_1gram.txt', uni_gram)
+    g.save('D:/경사대 선생님들/장미/전주_2gram.txt', bi_gram)
+    g.save('D:/경사대 선생님들/장미/전주_3gram.txt', tri_gram)
+    g.save('D:/경사대 선생님들/장미/전주_4gram.txt', four_gram)
+    g.save('D:/경사대 선생님들/장미/전주_5gram.txt', five_gram)
+    g.save('D:/경사대 선생님들/장미/전주_6gram.txt', six_gram)
