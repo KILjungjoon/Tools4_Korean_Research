@@ -45,7 +45,7 @@ class GramTools:
                 json.dump(content, f, indent=indent, ensure_ascii=False)
 
 if __name__=='__main__':
-    with open('D:/경사대 선생님들/장미/전주_total.txt', 'r', encoding='utf-8') as f:
+    with open(open path, 'r', encoding='utf-8') as f:
     # with open(source file path', 'r', encoding='utf-8') as f:
         text = f.read()
     g = GramTools(text, 'all')     # You can designate any seperator. 'all' removes all symbols in the n-gram text.
